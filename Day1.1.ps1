@@ -1,23 +1,17 @@
-﻿$floor = 0
-$Plan = Get-Content -Path '.\Prod\AdventOfCode\SteveTi\2015Day1.txt'
+$floor = 0
+$Plan = Get-Content -Path '.\2015Day1.txt'
+$CharacterCount = 0
 
 
-$plansplit = $Plan -split '' #checked using measure, 7002 count
+$plansplit = $Plan -split '' 
 
 foreach ($action in $plansplit)
 {
-    #-match '(' $UpFloor
-    if ($action -eq "(") {$floor++} 
-    if  
-    ($action -eq ")") {$floor--}
-    if 
-        ($floor -eq "-1") {"in the basement"}
-}
-
-$floor
-
-
-
-
-
     
+    if ($action -eq "(") {$floor++; $CharacterCount++}
+    if  
+    ($action -eq ")") {$floor--; $CharacterCount++ } 
+    elseif
+        ($floor -eq -1) {write-host $CharacterCount}
+        
+}
