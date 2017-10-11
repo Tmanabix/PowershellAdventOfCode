@@ -1,0 +1,6 @@
+   # $dimensions get-content
+   #split $dimensions with new variable by x
+    
+    ForEach ($Dimension in $dimensions)
+        {
+        $l = $dimensions[1] }
