@@ -1,6 +1,9 @@
    # $dimensions get-content
    #split $dimensions with new variable by x
     
-    ForEach ($Dimension in $dimensions)
+  
+$dimensionsSplit = $dimensions -replace ('x', ' ')
+
+    ForEach ($Dimension in $dimensionsSplit)
         {
-        $l = $dimensions[1] }
+        $l = $dimensionsSplit[1] }
